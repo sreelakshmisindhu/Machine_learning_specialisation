@@ -36,9 +36,10 @@ Regression estimates the relationships between a dependent variable and one or m
 The cost function compares how well the prediction matches the true value.  
 **Example**: Squared Error Cost Function
 
-\[
-J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right)^2
-\]
+<p align="center">
+    J(w, b) = (1 / 2m) Σ<sub>i=1</sub><sup>m</sup> (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)²
+</p>
+
 
 The values of `w` and `b` that minimize `J` give the best-fit function `f_w,b(x)`.
 
@@ -50,3 +51,9 @@ Gradient Descent is a method to minimize a function. It iteratively updates the 
 ### Key Steps:
 1. Use the partial derivatives with respect to `w` and `b` to find the slope direction.
 2. Adjust the parameters using a learning rate (`α`) to define the step size.
+
+tmp_w = w - α * ∂J(w, b) / ∂w  
+tmp_b = b - α * ∂J(w, b) / ∂b  
+w = tmp_w  
+b = tmp_b  
+
