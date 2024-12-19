@@ -1,27 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from common_functions import linear_function, cost_function
 
-#linear regression example with two data points
-
-def linear_function(x, w, b):
-    """
-    This function returns wx +b for a given array of x and fixed values of w and b 
-    """
-    f_wb = np.zeros(len(x))
-    for i in range(len(x)):
-        f_wb[i] = w * x[i] + b
-    return f_wb
-
-def cost_function(x, y, w, b):
-    """
-    This function computes the squared error cost for given array of y from f(x)
-    """
-    cost=0
-    f_wb = linear_function(x, w, b)
-    for i in range(len(x)):
-       cost = cost + (f_wb[i]-y[i])**2
-    cost = cost/(2*len(x)) 
-    return cost
+"""
+This code implements linear regression with one input parameter.
+"""
 
 def gradient(x, y, w, b, a, num_iter):
     """
